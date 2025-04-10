@@ -1,5 +1,5 @@
 //var url = "http://localhost:3300/api/users";
-var url = "https://aldair07-pg.onrender.com/api/users";
+var url = "https://pg-restapi-ibdj.onrender.com";
 
 function postUser() {
 
