@@ -28,7 +28,7 @@ function postUser() {
     });
 }
 
-function editUser(id) {
+function editarUser(id) {
     $.getJSON(userUrl + '/' + id, function (data) {
         const user = data.Usuario;
 
