@@ -11,7 +11,7 @@ function postUser() {
     };
 
     $.ajax({
-        url: userUrl,
+        url: url,
         type: 'POST',
         dataType: 'json',
         contentType: 'application/json',
@@ -29,7 +29,7 @@ function postUser() {
 }
 
 function editarUser(id) {
-    $.getJSON(userUrl + '/' + id, function (data) {
+    $.getJSON(url + '/' + id, function (data) {
         const user = data.Usuario;
 
         if (user) {
@@ -57,7 +57,7 @@ function updateUser() {
     };
 
     $.ajax({
-        url: userUrl + '/' + id,
+        url: url + '/' + id,
         type: 'PUT',
         dataType: 'json',
         contentType: 'application/json',
@@ -78,7 +78,7 @@ function updateUser() {
 function getUserById() {
     const id = $('#id-user').val();
 
-    $.getJSON(userUrl + '/' + id, function (data) {
+    $.getJSON(url + '/' + id, function (data) {
         const user = data.Usuario;
 
         if (user) {
@@ -105,7 +105,7 @@ function getUserById() {
 
 
 function getUsers() {
-    $.getJSON(userUrl, function (json) {
+    $.getJSON(url, function (json) {
         var arrUsers = json.users;
         var html = '<table border="1">' +
             '<tr><th>ID</th><th>Nombre</th><th>Email</th><th>Edad</th><th>Comentarios</th><th>Acciones</th></tr>';
@@ -133,7 +133,7 @@ function deleteUser(id) {
     if (!confirm("¿Estás seguro de eliminar al usuario con ID " + id + "?")) return;
 
     $.ajax({
-        url: userUrl + '/' + id,
+        url: url + '/' + id,
         type: 'DELETE',
         success: function (data) {
             alert('Usuario eliminado: ' + JSON.stringify(data));
